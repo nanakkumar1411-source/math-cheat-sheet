@@ -1,0 +1,110 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Math Cheat Sheet</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{--paper:#F5F7FC;--card:#FFFFFF;--ink:#151C2E;--muted:#58627A;--line:#DCE1EE;--blue:#2443C4;--blue-soft:#E6EBFB;--hl:#FFE27A;--hl-ink:#151C2E;--good:#18774A;--good-soft:#E3F4EA;--bad:#B02A2A;--bad-soft:#FBE7E7;
+--display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;--body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;--test:"Source Serif 4",Georgia,serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0F1320;--card:#171D2D;--ink:#E6EAF4;--muted:#9BA4BA;--line:#2A3247;--blue:#93A8FF;--blue-soft:#1F2948;--hl:#5C4C10;--hl-ink:#FFF3C4;--good:#6AD39C;--good-soft:#123323;--bad:#F28B8B;--bad-soft:#3A1A1C;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#0F1320;--card:#171D2D;--ink:#E6EAF4;--muted:#9BA4BA;--line:#2A3247;--blue:#93A8FF;--blue-soft:#1F2948;--hl:#5C4C10;--hl-ink:#FFF3C4;--good:#6AD39C;--good-soft:#123323;--bad:#F28B8B;--bad-soft:#3A1A1C;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.wrap{max-width:900px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px}
+h1,h2{font-family:var(--display);margin:0;line-height:1.1;text-wrap:balance}
+h1{font-size:clamp(2rem,6vw,2.8rem);font-weight:800}
+h1 span{color:var(--blue)}
+.sub{color:var(--muted);margin:8px 0 22px}
+.top{background:var(--blue);color:var(--card);border-radius:14px;padding:16px 18px;display:grid;gap:6px;margin-bottom:18px}
+.top b{font-family:var(--display);font-size:1.15rem}
+.top div{font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;gap:10px;align-content:start;min-width:0}
+.n{font-family:var(--display);font-weight:800;color:var(--blue);font-size:14px;letter-spacing:.05em}
+h2{font-size:1.3rem;font-weight:700}
+.rule{font-weight:700;border-left:4px solid var(--blue);padding-left:12px}
+.m{font-family:var(--test);font-size:1.12em;line-height:2;background:var(--paper);border-radius:8px;padding:6px 12px;overflow-x:auto}
+.m i{font-style:italic}
+.fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 3px;line-height:1.2;font-size:.92em}
+.fr>span:first-child{border-bottom:1.5px solid currentColor;padding:0 4px 1px}
+.fr>span:last-child{padding:1px 4px 0}
+mark{background:var(--hl);color:var(--hl-ink);padding:0 3px;border-radius:3px}
+.miss{background:var(--bad-soft);color:var(--ink);border-radius:8px;padding:8px 12px;font-size:15px}
+.miss b{color:var(--bad)}
+ul{margin:0;padding-left:1.2em;display:grid;gap:3px}
+.pace{margin-top:18px;background:var(--good-soft);border-radius:14px;padding:16px 18px;display:grid;gap:6px}
+.pace b{font-family:var(--display);font-size:1.15rem;color:var(--good)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+</style>
+<div class="wrap">
+<h1>Math <span>cheat sheet</span></h1>
+<p class="sub">The 10 things behind every math question you missed. Read it once tonight and once before the test.</p>
+
+<div class="top">
+<b>Before you click any answer</b>
+<div>1. Finish this sentence: "The right answer has to ______."</div>
+<div>2. Put your answer back in. Does the size make sense?</div>
+</div>
+
+<div class="grid">
+
+<div class="card"><div class="n">1 · GRAPHS</div><h2>Rate is slope, total is height</h2>
+<div class="rule">Straight line = same rate. Flat = rate 0. A corner or curve = the rate changed.</div>
+<ul><li>Steeper after a corner: rate went <b>up</b></li><li>Flatter after a corner: rate went <b>down</b></li></ul>
+<div class="miss"><b>You missed:</b> Practice 3 Q15. You picked "rate increased" on a straight line.</div></div>
+
+<div class="card"><div class="n">2 · WHAT A NUMBER MEANS</div><h2>Plain number = value at 0</h2>
+<div class="rule">The number next to <i>x</i> is the change for each 1 more.</div>
+<div class="m"><i>A</i> = 10<i>d</i> + 471<br>471 → the start. 10 → the gain per step.</div>
+<div class="m"><i>a</i><sup>0</sup> = 1, so <i>f</i>(0) = 1 + <i>b</i></div>
+<div class="miss"><b>You missed:</b> Practice 3 Q21 (what 471 means) and Practice 1 Q19 (<i>a<sup>x</sup></i> + <i>b</i>, left blank).</div></div>
+
+<div class="card"><div class="n">3 · PERCENT</div><h2>Turn it into a multiplier</h2>
+<ul><li>+13% → ×1.13, and −16% → ×0.84</li><li>"1.13 times" means 13% greater (subtract 1)</li><li>Two changes: <b>multiply</b> the multipliers</li><li>Going backward: <b>divide</b>, don't subtract</li></ul>
+<div class="m">+167%, then −16%: 2.67 × 0.84 = 2.2428 → <mark>124.28%</mark></div>
+<div class="miss"><b>You missed:</b> Practice 1 Q9 and Q22.</div></div>
+
+<div class="card"><div class="n">4 · LINEAR MODEL</div><h2>Rate × the years that pass</h2>
+<div class="m">rate = <span class="fr"><span>224 − 57</span><span>2011 − 1991</span></span> = 8.35<br>2011 → 2015 is 4 years: 224 + 8.35(4) = <mark>257</mark></div>
+<div class="rule">Don't add the whole change to the last value.</div>
+<div class="miss"><b>You missed:</b> Practice 1 Q15 (you answered 391).</div></div>
+
+<div class="card"><div class="n">5 · WORDS TO EQUATION</div><h2>Count what the total counts</h2>
+<div class="rule">"30 sides" means add how many of each. Don't multiply by lengths.</div>
+<div class="m"><i>n</i> + 6 + 5<i>n</i> = 30 → <mark>6<i>n</i> + 6 = 30</mark></div>
+<div class="miss"><b>You missed:</b> Practice 1 Q22.</div></div>
+
+<div class="card"><div class="n">6 · SYSTEMS</div><h2>Is one equation a multiple of the other?</h2>
+<ul><li>Both sides multiple: same line, infinitely many solutions</li><li>Left side multiple, right side not: parallel, no solution</li><li>Neither: they cross once</li></ul>
+<div class="m">8<i>x</i> + 7<i>y</i> = 9 and 24<i>x</i> + 21<i>y</i> = 27<br>(second is 3 × first) → same line</div>
+<div class="miss"><b>You missed:</b> Practice 1 Q21.</div></div>
+
+<div class="card"><div class="n">7 · INEQUALITIES</div><h2>Negative? Flip the sign.</h2>
+<div class="m">−3<i>x</i> ≤ 12 → <i>x</i> ≥ −4</div>
+<div class="m"><i>ax</i> ≤ 56 and <i>x</i> ≥ −8 → <i>a</i> is negative<br><span class="fr"><span>56</span><span><i>a</i></span></span> = −8 → <mark><i>a</i> = −7</mark></div>
+<div class="rule">Then plug −7 back in to check.</div>
+<div class="miss"><b>You missed:</b> Practice 3 Q20. You knew it, but slipped.</div></div>
+
+<div class="card"><div class="n">8 · CHUNKS</div><h2>Don't solve for <i>x</i></h2>
+<div class="m">3<i>x</i><sup>2</sup> − 18<i>x</i> − 15 = 0, find <i>x</i><sup>2</sup> − 6<i>x</i><br>÷ 3: <i>x</i><sup>2</sup> − 6<i>x</i> − 5 = 0 → <mark><i>x</i><sup>2</sup> − 6<i>x</i> = 5</mark></div>
+<div class="rule">Rearrange until the chunk sits alone.</div>
+<div class="miss"><b>You missed:</b> Practice 1 Q21 (Advanced Math).</div></div>
+
+<div class="card"><div class="n">9 · SCALING AND MEANS</div><h2>Only the radius is squared</h2>
+<div class="m"><i>R</i> = 7<i>r</i>, <i>H</i> = 8<i>h</i> → 7<sup>2</sup> × 8 = <mark>392</mark></div>
+<div class="rule">Mean: more weight on high values pulls it up. Symmetric = exactly the middle.</div>
+<div class="miss"><b>You missed:</b> Practice 1 Geometry Q20 and Q18 (means).</div></div>
+
+<div class="card"><div class="n">10 · MINUS SIGNS</div><h2>A minus flips everything inside</h2>
+<div class="m">180 − (9<i>x</i> − 560) = 180 − 9<i>x</i> + 560 = <mark>740 − 9<i>x</i></mark></div>
+<div class="rule">Plug in <i>j</i>(10): −10.5(10) + 144 = 39, not 139.</div>
+<div class="miss"><b>You missed:</b> Practice 1 Q19 (Algebra) and sign slips from your other chats.</div></div>
+
+</div>
+
+<div class="pace"><b>Pacing: the biggest fix</b>
+<div>8 of your 10 Practice 1 math misses were in the last 5 questions of a module.</div>
+<ul><li>Be near question 11 of 22 at the 17-minute mark</li><li>Stuck for about 90 seconds? Pick an answer, flag it, move on</li><li>Never leave a blank</li><li>Change an answer only if you can say why</li></ul></div>
+</div>
+
+</body></html>
